@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     # Custom apps
-    'userauths',
     'products',
     'orders',
     'addon',
