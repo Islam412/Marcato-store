@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     # Custom apps
+    'userauth',
     'products',
     'orders',
     'addon',
@@ -165,6 +166,7 @@ JAZZMIN_SETTINGS = {
     ],
 
     "order_with_respect_to": [
+        "userauth",
         "addon",
         "orders",
         "products",
