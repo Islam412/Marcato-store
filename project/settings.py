@@ -152,6 +152,13 @@ MEDIA_ROOT=BASE_DIR / "media"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+# change user Configs
+AUTH_USER_MODEL = 'userauth.User'
+
+LOGIN_REDIRECT_URL = ''
+LOGIN_URL = 'userauths:sign-up'
+LOGOUT_REDIRECT_URL = "userauths:sign-up"
+
 
 
 # JAZZMIN settings
