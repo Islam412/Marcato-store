@@ -9,6 +9,10 @@ class Profileadmin(admin.ModelAdmin):
     
 class Useradmin(admin.ModelAdmin):
     list_display = ('email','first_name','last_name','username')
+    search_fields = ('email', 'first_name', 'last_name', 'username')
+
+
+
 
 admin.site.register(User,Useradmin)
 admin.site.register(Profile,Profileadmin)
