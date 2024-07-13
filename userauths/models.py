@@ -37,9 +37,9 @@ class Profile(models.Model):
     last_name = models.CharField(max_length=255)
     username = models.CharField(max_length=255)
     images = models.ImageField(default='default.jpg', upload_to='profile_pics')
-    address = models.CharField(max_length=255, null=True, blank=True, blank=True) 
-    city = models.CharField(max_length=255, null=True, blank=True, blank=True) 
-    country = models.CharField(max_length=255, null=True, blank=True, blank=True)
+    address = models.CharField(max_length=255, null=True, blank=True) 
+    city = models.CharField(max_length=255, null=True, blank=True) 
+    country = models.CharField(max_length=255, null=True, blank=True)
     verified = models.BooleanField(default=False)
     
     def __str__(self):
