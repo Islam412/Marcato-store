@@ -2,5 +2,11 @@ from django.contrib import admin
 from userauths.models import User , Profile
 
 
-admin.site.register(User)
-admin.site.register(Profile)
+class Profileadmin(admin.ModelAdmin):
+    list_display = ('user','first_name','last_name','username','phone','address','city','country','verified')
+    
+class Useradmin(admin.ModelAdmin):
+    list_display = ('email','first_name','last_name','username')
+
+admin.site.register(User,Useradmin)
+admin.site.register(Profile,Profileadmin)
