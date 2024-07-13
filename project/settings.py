@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     # Custom apps
-    'userauth',
+    'userauths',
     'products',
     'orders',
     'addon',
@@ -93,7 +93,7 @@ WSGI_APPLICATION = 'project.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "markato",
+        "NAME": "markato_db",
         "USER": "postgres",
         "PASSWORD": "1111",
         "HOST": "localhost",
@@ -153,7 +153,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # change user Configs
-AUTH_USER_MODEL = 'userauth.User'
+AUTH_USER_MODEL = 'userauths.User'
 
 LOGIN_REDIRECT_URL = ''
 LOGIN_URL = 'userauths:sign-up'
@@ -173,7 +173,7 @@ JAZZMIN_SETTINGS = {
     ],
 
     "order_with_respect_to": [
-        "userauth",
+        "userauths",
         "addon",
         "orders",
         "products",
