@@ -1,11 +1,11 @@
 
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-
+from django.utils.text import slugify
 
 from shortuuid.django_fields import ShortUUIDField
-import shortuuid
 
+import shortuuid
 from PIL import Image
 
 
@@ -43,7 +43,19 @@ class Profile(models.Model):
     city = models.CharField(max_length=255, null=True, blank=True) 
     country = models.CharField(max_length=255, null=True, blank=True)
     verified = models.BooleanField(default=False)
+    slug = models.SlugField(unique=True ,null=True ,blank=True)
     
     def __str__(self):
-        return self.user.username
+        if self.username != "" or self.username != None:
+            return self.username
+        else:
+            return self.user.username
+    
+    # import shortuuid
+    def save(self, *args , **kwargs):
+        if self.slug == "" or self.slug == None:
+            uuid_key = shortuuid.uuid()   # user_name-bbnmbvcfxgfhfjgtfrqwertyhbfdsdfgdfvgb
+            uniqueid = uuid_key[:10]    # user_qw
+            self.slug = slugify(self.username) + '-' + str(uniqueid.lower()) #islam-hamdy-qwer
+        super(Profile, self).save(*args, **kwargs)
 
