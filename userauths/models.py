@@ -1,13 +1,12 @@
-
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.utils.text import slugify
+from django.db.models.signals import post_save
 
+from PIL import Image
 from shortuuid.django_fields import ShortUUIDField
 
 import shortuuid
-from PIL import Image
-
 
 GENDER = (
     ('Male', 'Male'),
@@ -30,7 +29,6 @@ class User(AbstractUser):
     
     def __str__(self):
         return self.username
-
 
 class Profile(models.Model):
     pid = ShortUUIDField(length=7, max_length=255, alphabet="qwertyuiopasdfghjklzxcvbnm1234567890")
@@ -59,3 +57,13 @@ class Profile(models.Model):
             self.slug = slugify(self.username) + '-' + str(uniqueid.lower()) #islam-hamdy-qwer
         super(Profile, self).save(*args, **kwargs)
 
+# create user profile automatic
+def create_user_profile(sender, instance, created, **kwargs):
+    if created:
+        Profile.objects.create(user=instance)
+
+def save_user_profile(sender, instance, **kwargs):
+    instance.profile.save()
+
+post_save.connect(create_user_profile, sender=User)
+post_save.connect(save_user_profile, sender=User)
