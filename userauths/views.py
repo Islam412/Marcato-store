@@ -18,7 +18,6 @@ from userauths.forms import UserRegisterForm , ProfileForm
 from userauths.serializers import UserSerializer , ProfileSerializer 
 
 
-# Create your views here.
 
 class RegisterView(FormView):
     template_name = 'userauths/sign-up.html'
@@ -48,7 +47,7 @@ class RegisterView(FormView):
             messages.warning(request, f"Hey {request.user.username}, you are already logged in")
             return redirect(self.success_url)
         return super().get(request, *args, **kwargs)
-
+    
 
 class LoginView(TemplateView):
     template_name = 'userauths/login.html'
@@ -76,7 +75,6 @@ class LoginView(TemplateView):
             return redirect('book:book')
         return super().get(request, *args, **kwargs)
     
-    
 class LogoutView(LoginRequiredMixin, TemplateView):
     template_name = 'userauths/logout.html'
 
@@ -93,8 +91,21 @@ class ProfileView(DetailView):
 
     def get_object(self, queryset=None):
         return get_object_or_404(Profile, user=self.request.user)
-    
-    
+
+
+
+class ProfileUpdateView(UpdateView):
+    model = Profile
+    form_class = ProfileForm
+    template_name = 'userauths/profile_update.html'
+    context_object_name = 'profile'
+
+    def get_object(self, queryset=None):
+        return get_object_or_404(Profile, user=self.request.user)
+
+    def get_success_url(self):
+        return reverse_lazy('userauths:profile')
+
 
 # Api with class based views
 class UserRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
@@ -102,7 +113,6 @@ class UserRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
     serializer_class = UserSerializer
     # permission_classes = [AllowAny]
     
-
 class UserListAPIView(ListAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
@@ -111,7 +121,8 @@ class UserListAPIView(ListAPIView):
 class UserCreateAPIView(CreateAPIView):
     serializer_class = UserSerializer
     permission_classes = [AllowAny]
-    
+
+
 class ProfileListAPIView(ListAPIView):
     queryset = Profile.objects.all()
     serializer_class = ProfileSerializer
@@ -119,6 +130,7 @@ class ProfileListAPIView(ListAPIView):
     
 class ProfileCreateAPIView(CreateAPIView):
     serializer_class = ProfileSerializer
+
     
 class ProfileUpdateAPIView(UpdateAPIView):
     queryset = Profile.objects.all()
