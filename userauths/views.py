@@ -107,3 +107,7 @@ class UserListAPIView(ListAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
     # permission_classes = [AllowAny]
+    
+class UserCreateAPIView(CreateAPIView):
+    serializer_class = UserSerializer
+    permission_classes = [AllowAny]
