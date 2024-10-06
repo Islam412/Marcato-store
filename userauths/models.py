@@ -18,3 +18,14 @@ class User(AbstractUser):
 
     def __str__(self):
         return str(self.username)
+    
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    cover_images = models.ImageField(upload_to='Images_Profile', null=True, blank=True, default='default.png')
+    phone = models.CharField(max_length=200, null=True ,blank=True)
+    address = models.CharField(max_length=200 ,null=True ,blank=True)
+    verified = models.BooleanField(default=False)
+
+    
+    def __str__(self):
+        return self.user.username if self.user and self.user.username else 'Unnamed Profile'
