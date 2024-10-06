@@ -84,3 +84,12 @@ class LogoutView(LoginRequiredMixin, TemplateView):
         logout(request)
         messages.success(request, 'You have been logged out')
         return redirect("userauths:sign-up")
+
+
+class ProfileView(DetailView):
+    model = Profile
+    template_name = 'userauths/profile.html'
+    context_object_name = 'profile'
+
+    def get_object(self, queryset=None):
+        return get_object_or_404(Profile, user=self.request.user)
