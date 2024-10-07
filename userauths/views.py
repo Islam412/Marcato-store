@@ -22,7 +22,7 @@ from userauths.serializers import UserSerializer , ProfileSerializer
 class RegisterView(FormView):
     template_name = 'userauths/sign-up.html'
     form_class = UserRegisterForm
-    success_url = reverse_lazy('book:book')
+    success_url = reverse_lazy('settings:home')
 
     def form_valid(self, form):
         user = form.save()
@@ -62,7 +62,7 @@ class LoginView(TemplateView):
             if user is not None:
                 login(request, user)
                 messages.success(request, "You are Logged In")
-                return redirect('book:book')
+                return redirect('settings:home')
             else:
                 messages.error(request, 'Username or password does not exist.')
         except User.DoesNotExist:
@@ -72,7 +72,7 @@ class LoginView(TemplateView):
 
     def get(self, request, *args, **kwargs):
         if request.user.is_authenticated:
-            return redirect('book:book')
+            return redirect('settings:home')
         return super().get(request, *args, **kwargs)
     
 class LogoutView(LoginRequiredMixin, TemplateView):
