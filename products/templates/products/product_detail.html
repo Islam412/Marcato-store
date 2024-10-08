@@ -38,18 +38,14 @@
                                 <label class="details-label new">{{product.flag}}</label>
                             </div>
                             <ul class="details-preview"> 
-                                <li><img src="images/product/01.jpg" alt="product"></li>
-                                <li><img src="images/product/01.jpg" alt="product"></li>
-                                <li><img src="images/product/01.jpg" alt="product"></li>
-                                <li><img src="images/product/01.jpg" alt="product"></li>
-                                <li><img src="images/product/01.jpg" alt="product"></li>
+                                {% for image in product.product_image.all  %}
+                                    <li><img src="{{image.image.url}}" alt="product"></li>
+                                {% endfor %}
                             </ul>
                             <ul class="details-thumb">
-                                <li><img src="images/product/01.jpg" alt="product"></li>
-                                <li><img src="images/product/01.jpg" alt="product"></li>
-                                <li><img src="images/product/01.jpg" alt="product"></li>
-                                <li><img src="images/product/01.jpg" alt="product"></li>
-                                <li><img src="images/product/01.jpg" alt="product"></li>
+                                {% for image in product.product_image.all  %}
+                                    <li><img src="{{image.image.url}}" alt="product"></li>
+                                {% endfor %}
                             </ul>
                         </div>
                     </div>
