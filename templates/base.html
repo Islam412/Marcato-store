@@ -116,13 +116,20 @@
                         <button class="header-src"><i class="fas fa-search"></i></button>
                     </div>
 
-                    <a href="index.html" class="header-logo">
-                        <img src="{% static 'images/logo.png' %}" alt="logo">
-                    </a>
-                    <a href="login.html" class="header-widget" title="My Account">
-                        <img src="{% static 'images/user.png' %}" alt="user">
-                        <span>join</span>
-                    </a>
+
+                    
+                    <div class="dropdown">
+                        <button class="header-widget" title="My Account">
+                            <img src="{{ user.profile.cover_images.url }}" alt="user">
+                        </button>
+                        <ul class="dropdown-position-list">
+                            <li><a href="{% url 'userauths:profile' %}">Profile</a></li>
+                            <li><a href="{% url 'userauths:profile-edit' %}">Edit Profile</a></li>
+                            <li><a href="{% url 'userauths:sign-out' %}">Log out</a></li>
+                        </ul>
+                    </div>
+
+
 
                     <form class="header-form">
                         <input type="text" placeholder="Search anything...">
@@ -130,7 +137,7 @@
                     </form>
 
                     <div class="header-widget-group">
-                        <a href="compare.html" class="header-widget" title="Compare List">
+                        <a href="compare.html" class="header-widget dropdown-megamenu" title="Compare List">
                             <i class="fas fa-random"></i>
                             <sup>0</sup>
                         </a>
@@ -167,135 +174,7 @@
                                 <li class="navbar-item dropdown-megamenu">
                                     <a class="navbar-link" href="{% url 'products:product_list' %}">Product</a>
                                 </li>
-                                <li class="navbar-item dropdown-megamenu">
-                                    <a class="navbar-link dropdown-arrow" href="#">category</a>
-                                    <div class="megamenu">
-                                        <div class="container megamenu-scroll">
-                                            <div class="row row-cols-5">
-                                                <div class="col">
-                                                    <div class="megamenu-wrap">
-                                                        <h5 class="megamenu-title">vegetables</h5>
-                                                        <ul class="megamenu-list">
-                                                            <li><a href="#">carrot</a></li>
-                                                            <li><a href="#">broccoli</a></li>
-                                                            <li><a href="#">asparagus</a></li>
-                                                            <li><a href="#">cauliflower</a></li>
-                                                            <li><a href="#">eggplant</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="megamenu-wrap">
-                                                        <h5 class="megamenu-title">fruits</h5>
-                                                        <ul class="megamenu-list">
-                                                            <li><a href="#">Apple</a></li>
-                                                            <li><a href="#">orange</a></li>
-                                                            <li><a href="#">banana</a></li>
-                                                            <li><a href="#">strawberrie</a></li>
-                                                            <li><a href="#">watermelon</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="megamenu-wrap">
-                                                        <h5 class="megamenu-title">dairy farms</h5>
-                                                        <ul class="megamenu-list">
-                                                            <li><a href="#">Butter</a></li>
-                                                            <li><a href="#">Cheese</a></li>
-                                                            <li><a href="#">Milk</a></li>
-                                                            <li><a href="#">Eggs</a></li>
-                                                            <li><a href="#">cream</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="megamenu-wrap">
-                                                        <h5 class="megamenu-title">seafoods</h5>
-                                                        <ul class="megamenu-list">
-                                                            <li><a href="#">Lobster</a></li>
-                                                            <li><a href="#">Octopus</a></li>
-                                                            <li><a href="#">Shrimp</a></li>
-                                                            <li><a href="#">Halabos</a></li>
-                                                            <li><a href="#">Maeuntang</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="megamenu-wrap">
-                                                        <h5 class="megamenu-title">diet foods</h5>
-                                                        <ul class="megamenu-list">
-                                                            <li><a href="#">Salmon</a></li>
-                                                            <li><a href="#">Avocados</a></li>
-                                                            <li><a href="#">Leafy Greens</a></li>
-                                                            <li><a href="#">Boiled Potatoes</a></li>
-                                                            <li><a href="#">Cottage Cheese</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="megamenu-wrap">
-                                                        <h5 class="megamenu-title">fast foods</h5>
-                                                        <ul class="megamenu-list">
-                                                            <li><a href="#">burger</a></li>
-                                                            <li><a href="#">milkshake</a></li>
-                                                            <li><a href="#">sandwich</a></li>
-                                                            <li><a href="#">doughnut</a></li>
-                                                            <li><a href="#">pizza</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="megamenu-wrap">
-                                                        <h5 class="megamenu-title">drinks</h5>
-                                                        <ul class="megamenu-list">
-                                                            <li><a href="#">cocktail</a></li>
-                                                            <li><a href="#">hard soda</a></li>
-                                                            <li><a href="#">shampain</a></li>
-                                                            <li><a href="#">Wine</a></li>
-                                                            <li><a href="#">barley</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="megamenu-wrap">
-                                                        <h5 class="megamenu-title">meats</h5>
-                                                        <ul class="megamenu-list">
-                                                            <li><a href="#">Meatball</a></li>
-                                                            <li><a href="#">Sausage</a></li>
-                                                            <li><a href="#">Poultry</a></li>
-                                                            <li><a href="#">chicken</a></li>
-                                                            <li><a href="#">Cows</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="megamenu-wrap">
-                                                        <h5 class="megamenu-title">fishes</h5>
-                                                        <ul class="megamenu-list">
-                                                            <li><a href="#">scads</a></li>
-                                                            <li><a href="#">pomfret</a></li>
-                                                            <li><a href="#">groupers</a></li>
-                                                            <li><a href="#">anchovy</a></li>
-                                                            <li><a href="#">mackerel</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="megamenu-wrap">
-                                                        <h5 class="megamenu-title">dry foods</h5>
-                                                        <ul class="megamenu-list">
-                                                            <li><a href="#">noodles</a></li>
-                                                            <li><a href="#">Powdered milk</a></li>
-                                                            <li><a href="#">nut & yeast</a></li>
-                                                            <li><a href="#">almonds</a></li>
-                                                            <li><a href="#">pumpkin</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
+
                                 <li class="navbar-item dropdown">
                                     <a class="navbar-link dropdown-arrow" href="#">pages</a>
                                     <ul class="dropdown-position-list">
