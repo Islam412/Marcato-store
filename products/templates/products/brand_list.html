@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -31,19 +32,19 @@
         <link rel="icon" href="images/favicon.png">
 
         <!-- FONTS -->
-        <link rel="stylesheet" href="fonts/flaticon/flaticon.css">
-        <link rel="stylesheet" href="fonts/icofont/icofont.min.css">
-        <link rel="stylesheet" href="fonts/fontawesome/fontawesome.min.css">
+        <link rel="stylesheet" href="{% static 'fonts/flaticon/flaticon.css' %}">
+        <link rel="stylesheet" href="{% static 'fonts/icofont/icofont.min.css' %}">
+        <link rel="stylesheet" href="{% static 'fonts/fontawesome/fontawesome.min.css' %}">
 
         <!-- VENDOR -->
-        <link rel="stylesheet" href="vendor/venobox/venobox.min.css">
-        <link rel="stylesheet" href="vendor/slickslider/slick.min.css">
-        <link rel="stylesheet" href="vendor/niceselect/nice-select.min.css">
-        <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static 'vendor/venobox/venobox.min.css' %}">
+        <link rel="stylesheet" href="{% static 'vendor/slickslider/slick.min.css' %}">
+        <link rel="stylesheet" href="{% static 'vendor/niceselect/nice-select.min.css' %}">
+        <link rel="stylesheet" href="{% static 'vendor/bootstrap/bootstrap.min.css' %}">
 
         <!-- CUSTOM -->
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/brand-list.css">
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+        <link rel="stylesheet" href="{% static 'css/brand-list.css' %}">
         <!--=====================================
                     CSS LINK PART END
         =======================================-->
@@ -106,16 +107,16 @@
             <div class="container">
                 <div class="header-content">
                     <div class="header-media-group">
-                        <button class="header-user"><img src="images/user.png" alt="user"></button>
-                        <a href="index.html"><img src="images/logo.png" alt="logo"></a>
+                        <button class="header-user"><img src="{% static 'images/user.png' %}" alt="user"></button>
+                        <a href="index.html"><img src="{% static 'images/logo.png' %}" alt="logo"></a>
                         <button class="header-src"><i class="fas fa-search"></i></button>
                     </div>
 
                     <a href="index.html" class="header-logo">
-                        <img src="images/logo.png" alt="logo">
+                        <img src="{% static 'images/logo.png' %}" alt="logo">
                     </a>
                     <a href="login.html" class="header-widget" title="My Account">
-                        <img src="images/user.png" alt="user">
+                        <img src="{% static 'images/user.png' %}" alt="user">
                         <span>join</span>
                     </a>
 
@@ -579,7 +580,7 @@
             <ul class="cart-list">
                 <li class="cart-item">
                     <div class="cart-media">
-                        <a href="#"><img src="images/product/01.jpg" alt="product"></a>
+                        <a href="#"><img src="{% static 'images/product/01.jpg' %}" alt="product"></a>
                         <button class="cart-delete"><i class="far fa-trash-alt"></i></button>
                     </div>
                     <div class="cart-info-group">
@@ -599,7 +600,7 @@
                 </li> 
                 <li class="cart-item">
                     <div class="cart-media">
-                        <a href="#"><img src="images/product/02.jpg" alt="product"></a>
+                        <a href="#"><img src="{% static 'images/product/02.jpg' %}" alt="product"></a>
                         <button class="cart-delete"><i class="far fa-trash-alt"></i></button>
                     </div>
                     <div class="cart-info-group">
@@ -619,7 +620,7 @@
                 </li>
                 <li class="cart-item">
                     <div class="cart-media">
-                        <a href="#"><img src="images/product/03.jpg" alt="product"></a>
+                        <a href="#"><img src="{% static 'images/product/03.jpg' %}" alt="product"></a>
                         <button class="cart-delete"><i class="far fa-trash-alt"></i></button>
                     </div>
                     <div class="cart-info-group">
@@ -639,7 +640,7 @@
                 </li>
                 <li class="cart-item">
                     <div class="cart-media">
-                        <a href="#"><img src="images/product/04.jpg" alt="product"></a>
+                        <a href="#"><img src="{% static 'images/product/04.jpg' %}" alt="product"></a>
                         <button class="cart-delete"><i class="far fa-trash-alt"></i></button>
                     </div>
                     <div class="cart-info-group">
@@ -659,7 +660,7 @@
                 </li>
                 <li class="cart-item">
                     <div class="cart-media">
-                        <a href="#"><img src="images/product/05.jpg" alt="product"></a>
+                        <a href="#"><img src="{% static 'images/product/05.jpg' %}" alt="product"></a>
                         <button class="cart-delete"><i class="far fa-trash-alt"></i></button>
                     </div>
                     <div class="cart-info-group">
@@ -700,7 +701,7 @@
         =======================================-->
         <aside class="nav-sidebar">
             <div class="nav-header">
-                <a href="#"><img src="images/logo.png" alt="logo"></a>
+                <a href="#"><img src="{% static 'images/logo.png' %}" alt="logo"></a>
                 <button class="nav-close"><i class="icofont-close"></i></button>
             </div>
             <div class="nav-content">
@@ -712,7 +713,7 @@
                 </div>
                 <!-- This commentable code show when user login or register -->
                 <!-- <div class="nav-profile">
-                    <a class="nav-user" href="#"><img src="images/user.png" alt="user"></a>
+                    <a class="nav-user" href="#"><img src="{% static 'images/user.png' %}" alt="user"></a>
                     <h4 class="nav-name"><a href="profile.html">Miron Mahmud</a></h4>
                 </div> -->
                 <div class="nav-select-group">
@@ -878,22 +879,22 @@
                                         <label class="view-label off">-10%</label>
                                     </div>
                                     <ul class="preview-slider slider-arrow"> 
-                                        <li><img src="images/product/01.jpg" alt="product"></li>
-                                        <li><img src="images/product/01.jpg" alt="product"></li>
-                                        <li><img src="images/product/01.jpg" alt="product"></li>
-                                        <li><img src="images/product/01.jpg" alt="product"></li>
-                                        <li><img src="images/product/01.jpg" alt="product"></li>
-                                        <li><img src="images/product/01.jpg" alt="product"></li>
-                                        <li><img src="images/product/01.jpg" alt="product"></li>
+                                        <li><img src="{% static 'images/product/01.jpg' %}" alt="product"></li>
+                                        <li><img src="{% static 'images/product/01.jpg' %}" alt="product"></li>
+                                        <li><img src="{% static 'images/product/01.jpg' %}" alt="product"></li>
+                                        <li><img src="{% static 'images/product/01.jpg' %}" alt="product"></li>
+                                        <li><img src="{% static 'images/product/01.jpg' %}" alt="product"></li>
+                                        <li><img src="{% static 'images/product/01.jpg' %}" alt="product"></li>
+                                        <li><img src="{% static 'images/product/01.jpg' %}" alt="product"></li>
                                     </ul>
                                     <ul class="thumb-slider">
-                                        <li><img src="images/product/01.jpg" alt="product"></li>
-                                        <li><img src="images/product/01.jpg" alt="product"></li>
-                                        <li><img src="images/product/01.jpg" alt="product"></li>
-                                        <li><img src="images/product/01.jpg" alt="product"></li>
-                                        <li><img src="images/product/01.jpg" alt="product"></li>
-                                        <li><img src="images/product/01.jpg" alt="product"></li>
-                                        <li><img src="images/product/01.jpg" alt="product"></li>
+                                        <li><img src="{% static 'images/product/01.jpg' %}" alt="product"></li>
+                                        <li><img src="{% static 'images/product/01.jpg' %}" alt="product"></li>
+                                        <li><img src="{% static 'images/product/01.jpg' %}" alt="product"></li>
+                                        <li><img src="{% static 'images/product/01.jpg' %}" alt="product"></li>
+                                        <li><img src="{% static 'images/product/01.jpg' %}" alt="product"></li>
+                                        <li><img src="{% static 'images/product/01.jpg' %}" alt="product"></li>
+                                        <li><img src="{% static 'images/product/01.jpg' %}" alt="product"></li>
                                     </ul>
                                 </div>
                             </div>
@@ -1020,7 +1021,7 @@
                     <div class="col all vegetables">
                         <div class="brand-wrap">
                             <div class="brand-media">
-                                <img src="images/brand/01.jpg" alt="brand">
+                                <img src="{% static 'images/brand/01.jpg' %}" alt="brand">
                                 <div class="brand-overlay">
                                     <a href="brand-single.html"><i class="fas fa-link"></i></a>
                                 </div>
@@ -1034,7 +1035,7 @@
                     <div class="col all fruits">
                         <div class="brand-wrap">
                             <div class="brand-media">
-                                <img src="images/brand/02.jpg" alt="brand">
+                                <img src="{% static 'images/brand/02.jpg' %}" alt="brand">
                                 <div class="brand-overlay">
                                     <a href="brand-single.html"><i class="fas fa-link"></i></a>
                                 </div>
@@ -1048,7 +1049,7 @@
                     <div class="col all drinks">
                         <div class="brand-wrap">
                             <div class="brand-media">
-                                <img src="images/brand/03.jpg" alt="brand">
+                                <img src="{% static 'images/brand/03.jpg' %}" alt="brand">
                                 <div class="brand-overlay">
                                     <a href="brand-single.html"><i class="fas fa-link"></i></a>
                                 </div>
@@ -1062,7 +1063,7 @@
                     <div class="col all fishes">
                         <div class="brand-wrap">
                             <div class="brand-media">
-                                <img src="images/brand/04.jpg" alt="brand">
+                                <img src="{% static 'images/brand/04.jpg' %}" alt="brand">
                                 <div class="brand-overlay">
                                     <a href="brand-single.html"><i class="fas fa-link"></i></a>
                                 </div>
@@ -1076,7 +1077,7 @@
                     <div class="col all meats">
                         <div class="brand-wrap">
                             <div class="brand-media">
-                                <img src="images/brand/05.jpg" alt="brand">
+                                <img src="{% static 'images/brand/05.jpg' %}" alt="brand">
                                 <div class="brand-overlay">
                                     <a href="brand-single.html"><i class="fas fa-link"></i></a>
                                 </div>
@@ -1090,7 +1091,7 @@
                     <div class="col all vegetables">
                         <div class="brand-wrap">
                             <div class="brand-media">
-                                <img src="images/brand/06.jpg" alt="brand">
+                                <img src="{% static 'images/brand/06.jpg' %}" alt="brand">
                                 <div class="brand-overlay">
                                     <a href="brand-single.html"><i class="fas fa-link"></i></a>
                                 </div>
@@ -1104,7 +1105,7 @@
                     <div class="col all fruits">
                         <div class="brand-wrap">
                             <div class="brand-media">
-                                <img src="images/brand/01.jpg" alt="brand">
+                                <img src="{% static 'images/brand/01.jpg' %}" alt="brand">
                                 <div class="brand-overlay">
                                     <a href="brand-single.html"><i class="fas fa-link"></i></a>
                                 </div>
@@ -1118,7 +1119,7 @@
                     <div class="col all drinks">
                         <div class="brand-wrap">
                             <div class="brand-media">
-                                <img src="images/brand/02.jpg" alt="brand">
+                                <img src="{% static 'images/brand/02.jpg' %}" alt="brand">
                                 <div class="brand-overlay">
                                     <a href="brand-single.html"><i class="fas fa-link"></i></a>
                                 </div>
@@ -1132,7 +1133,7 @@
                     <div class="col all fishes">
                         <div class="brand-wrap">
                             <div class="brand-media">
-                                <img src="images/brand/03.jpg" alt="brand">
+                                <img src="{% static 'images/brand/03.jpg' %}" alt="brand">
                                 <div class="brand-overlay">
                                     <a href="brand-single.html"><i class="fas fa-link"></i></a>
                                 </div>
@@ -1146,7 +1147,7 @@
                     <div class="col all meats">
                         <div class="brand-wrap">
                             <div class="brand-media">
-                                <img src="images/brand/04.jpg" alt="brand">
+                                <img src="{% static 'images/brand/04.jpg' %}" alt="brand">
                                 <div class="brand-overlay">
                                     <a href="brand-single.html"><i class="fas fa-link"></i></a>
                                 </div>
@@ -1160,7 +1161,7 @@
                     <div class="col all vegetables">
                         <div class="brand-wrap">
                             <div class="brand-media">
-                                <img src="images/brand/05.jpg" alt="brand">
+                                <img src="{% static 'images/brand/05.jpg' %}" alt="brand">
                                 <div class="brand-overlay">
                                     <a href="brand-single.html"><i class="fas fa-link"></i></a>
                                 </div>
@@ -1174,7 +1175,7 @@
                     <div class="col all fruits">
                         <div class="brand-wrap">
                             <div class="brand-media">
-                                <img src="images/brand/06.jpg" alt="brand">
+                                <img src="{% static 'images/brand/06.jpg' %}" alt="brand">
                                 <div class="brand-overlay">
                                     <a href="brand-single.html"><i class="fas fa-link"></i></a>
                                 </div>
@@ -1188,7 +1189,7 @@
                     <div class="col all drinks">
                         <div class="brand-wrap">
                             <div class="brand-media">
-                                <img src="images/brand/02.jpg" alt="brand">
+                                <img src="{% static 'images/brand/02.jpg' %}" alt="brand">
                                 <div class="brand-overlay">
                                     <a href="brand-single.html"><i class="fas fa-link"></i></a>
                                 </div>
@@ -1202,7 +1203,7 @@
                     <div class="col all fishes">
                         <div class="brand-wrap">
                             <div class="brand-media">
-                                <img src="images/brand/01.jpg" alt="brand">
+                                <img src="{% static 'images/brand/01.jpg' %}" alt="brand">
                                 <div class="brand-overlay">
                                     <a href="brand-single.html"><i class="fas fa-link"></i></a>
                                 </div>
@@ -1216,7 +1217,7 @@
                     <div class="col all fishes">
                         <div class="brand-wrap">
                             <div class="brand-media">
-                                <img src="images/brand/03.jpg" alt="brand">
+                                <img src="{% static 'images/brand/03.jpg' %}" alt="brand">
                                 <div class="brand-overlay">
                                     <a href="brand-single.html"><i class="fas fa-link"></i></a>
                                 </div>
@@ -1352,7 +1353,7 @@
                     <div class="col-sm-6 col-xl-3">
                         <div class="footer-widget">
                             <a class="footer-logo" href="#">
-                                <img src="images/logo.png" alt="logo">
+                                <img src="{% static 'images/logo.png' %}" alt="logo">
                             </a>
                             <p class="footer-desc">Adipisci asperiores ipsum ipsa repellat consequatur repudiandae quisquam assumenda dolor perspiciatis sit ipsum dolor amet.</p>
                             <ul class="footer-social">
@@ -1415,8 +1416,8 @@
                             <h3 class="footer-title">Download App</h3>
                             <p class="footer-desc">Lorem ipsum dolor sit amet tenetur dignissimos ipsum eligendi autem obcaecati minus ducimus totam reprehenderit exercitationem!</p>
                             <div class="footer-app">
-                                <a href="#"><img src="images/google-store.png" alt="google"></a>
-                                <a href="#"><img src="images/app-store.png" alt="app"></a>
+                                <a href="#"><img src="{% static 'images/google-store.png' %}" alt="google"></a>
+                                <a href="#"><img src="{% static 'images/app-store.png' %}" alt="app"></a>
                             </div>
                         </div>
                     </div>
@@ -1426,10 +1427,10 @@
                         <div class="footer-bottom">
                             <p class="footer-copytext">&copy;  All Copyrights Reserved by <a target="_blank" href="https://themeforest.net/user/mironcoder">Mironcoder</a></p>
                             <div class="footer-card">
-                                <a href="#"><img src="images/payment/jpg/01.jpg" alt="payment"></a>
-                                <a href="#"><img src="images/payment/jpg/02.jpg" alt="payment"></a>
-                                <a href="#"><img src="images/payment/jpg/03.jpg" alt="payment"></a>
-                                <a href="#"><img src="images/payment/jpg/04.jpg" alt="payment"></a>
+                                <a href="#"><img src="{% static 'images/payment/jpg/01.jpg' %}" alt="payment"></a>
+                                <a href="#"><img src="{% static 'images/payment/jpg/02.jpg' %}" alt="payment"></a>
+                                <a href="#"><img src="{% static 'images/payment/jpg/03.jpg' %}" alt="payment"></a>
+                                <a href="#"><img src="{% static 'images/payment/jpg/04.jpg' %}" alt="payment"></a>
                             </div>
                         </div>
                     </div>
@@ -1445,23 +1446,23 @@
                     JS LINK PART START
         =======================================-->
         <!-- VENDOR -->
-        <script src="vendor/bootstrap/jquery-1.12.4.min.js"></script>
-        <script src="vendor/bootstrap/popper.min.js"></script>
-        <script src="vendor/bootstrap/bootstrap.min.js"></script>
-        <script src="vendor/countdown/countdown.min.js"></script>
-        <script src="vendor/niceselect/nice-select.min.js"></script>
-        <script src="vendor/slickslider/slick.min.js"></script>
-        <script src="vendor/venobox/venobox.min.js"></script>
-        <script src="vendor/isotope/isotope.pkgd.min.js"></script>
+        <script src="{% static 'vendor/bootstrap/jquery-1.12.4.min.js' %}"></script>
+        <script src="{% static 'vendor/bootstrap/popper.min.js' %}"></script>
+        <script src="{% static 'vendor/bootstrap/bootstrap.min.js' %}"></script>
+        <script src="{% static 'vendor/countdown/countdown.min.js' %}"></script>
+        <script src="{% static 'vendor/niceselect/nice-select.min.js' %}"></script>
+        <script src="{% static 'vendor/slickslider/slick.min.js' %}"></script>
+        <script src="{% static 'vendor/venobox/venobox.min.js' %}"></script>
+        <script src="{% static 'vendor/isotope/isotope.pkgd.min.js' %}"></script>
 
         <!-- CUSTOM -->
-        <script src="js/nice-select.js"></script>
-        <script src="js/countdown.js"></script>
-        <script src="js/accordion.js"></script>
-        <script src="js/venobox.js"></script>
-        <script src="js/slick.js"></script>
-        <script src="js/isotope.js"></script>
-        <script src="js/main.js"></script> 
+        <script src="{% static 'js/nice-select.js' %}"></script>
+        <script src="{% static 'js/countdown.js' %}"></script>
+        <script src="{% static 'js/accordion.js' %}"></script>
+        <script src="{% static 'js/venobox.js' %}"></script>
+        <script src="{% static 'js/slick.js' %}"></script>
+        <script src="{% static 'js/isotope.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script> 
         <!--=====================================
                     JS LINK PART END
         =======================================-->
