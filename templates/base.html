@@ -78,14 +78,7 @@
                                     <option value="arabic">arabic</option>
                                 </select>
                             </div>
-                            <div class="header-select">
-                                <i class="icofont-money"></i>
-                                <select class="select">
-                                    <option value="english" selected>doller</option>
-                                    <option value="bangali">pound</option>
-                                    <option value="arabic">taka</option>
-                                </select>
-                            </div>
+
                         </div>
                     </div>
                     <div class="col-md-7 col-lg-4">
@@ -122,7 +115,7 @@
                         <button class="header-widget" title="My Account">
                             <img src="{{ user.profile.cover_images.url }}" alt="user">
                         </button>
-                        <ul class="dropdown-position-list">
+                        <ul class="dropdown-position-list navbar-link">
                             <li><a href="{% url 'userauths:profile' %}">Profile</a></li>
                             <li><a href="{% url 'userauths:profile-edit' %}">Edit Profile</a></li>
                             <li><a href="{% url 'userauths:sign-out' %}">Log out</a></li>
@@ -164,46 +157,18 @@
                     <div class="col-lg-12">
                         <div class="navbar-content">
                             <ul class="navbar-list">
-                                <li class="navbar-item dropdown">
+                                <li class="navbar-item">
                                     <a class="navbar-link" href="/">home</a>
                                 </li>
-                                <li class="navbar-item dropdown-megamenu">
-                                    <a class="navbar-link" href="{% url 'products:product_list' %}">Product</a>
+                                <li class="navbar-item-megamenu">
+                                    <a class="navbar-link" href="{% url 'products:product_list' %}">Shop</a>
                                 </li>
 
-                                <li class="navbar-item dropdown">
-                                    <a class="navbar-link dropdown-arrow" href="#">pages</a>
-                                    <ul class="dropdown-position-list">
-                                        <li><a href="faq.html">faqs</a></li>
-                                        <li><a href="offer.html">offers</a></li>
-                                        <li><a href="profile.html">my profile</a></li>
-                                        <li><a href="wallet.html">my wallet</a></li>
-                                        <li><a href="about.html">about us</a></li>
-                                        <li><a href="contact.html">contact us</a></li>
-                                        <li><a href="privacy.html">privacy policy</a></li>
-                                        <li><a href="coming-soon.html">coming soon</a></li>
-                                        <li><a href="blank-page.html">blank page</a></li>
-                                        <li><a href="error.html">404 Error</a></li>
-                                        <li><a href="email-template.html">email template</a></li>
-                                    </ul>
+                                <li class="navbar-item">
+                                    <a class="navbar-link" href="#">Brand</a>
                                 </li>
-                                <li class="navbar-item dropdown">
-                                    <a class="navbar-link dropdown-arrow" href="#">authentic</a>
-                                    <ul class="dropdown-position-list">
-                                        <li><a href="login.html">login</a></li>
-                                        <li><a href="register.html">register</a></li>
-                                        <li><a href="reset-password.html">reset password</a></li>
-                                        <li><a href="change-password.html">change password</a></li>
-                                    </ul>
-                                </li>
-                                <li class="navbar-item dropdown">
-                                    <a class="navbar-link dropdown-arrow" href="#">blogs</a>
-                                    <ul class="dropdown-position-list">
-                                        <li><a href="blog-grid.html">blog grid</a></li>
-                                        <li><a href="blog-standard.html">blog standard</a></li>
-                                        <li><a href="blog-details.html">blog details</a></li>
-                                        <li><a href="blog-author.html">blog author</a></li>
-                                    </ul>
+                                <li class="navbar-item">
+                                    <a class="navbar-link" href="#">Orders</a>
                                 </li>
                             </ul>
                             <div class="navbar-info-group">
