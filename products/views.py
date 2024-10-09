@@ -9,8 +9,6 @@ class ProductList(ListView):
     model = Product
 
 
-
-
 class ProductDetails(DetailView):
     model = Product
     
@@ -22,5 +20,7 @@ class ProductDetails(DetailView):
         context["rate_products"] = Product.objects.filter(brand=product.brand)
         return context
     
-    
+
+class BrandList(ListView):
+    model = Brand    
     
