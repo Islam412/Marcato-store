@@ -7,5 +7,5 @@ urlpatterns = [
     path('brands/', BrandList.as_view(), name='brand_list'),
     path('', ProductList.as_view(), name='product_list'),
     path('<slug:slug>/', ProductDetails.as_view(), name='product_detail'),
-    path('<slug:slug>/', BrandDetails.as_view(), name='brand_detail'),
+    path('brands/<slug:slug>/', BrandDetails.as_view(), name='brand_detail'),
 ]
