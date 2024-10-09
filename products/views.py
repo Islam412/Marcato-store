@@ -24,3 +24,7 @@ class ProductDetails(DetailView):
 class BrandList(ListView):
     model = Brand
 
+
+class BrandDetails(ListView):
+    model = Product
+    template_name = 'products/brand_detail.html'
