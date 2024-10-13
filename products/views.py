@@ -8,7 +8,10 @@ from django.db import models
 
 
 def queryset_debug(request):
-    return render(request, 'products/queryset_debug.html')
+    
+    data = Product.objects.all()
+    
+    return render(request, 'products/queryset_debug.html', {'data': data})
 
 
 class ProductList(ListView):
