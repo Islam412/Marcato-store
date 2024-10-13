@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import ProductDetails, ProductList, BrandList, BrandDetails
+from .views import ProductDetails, ProductList, BrandList, BrandDetails, queryset_debug
 
 app_name = 'products'
 
@@ -8,4 +8,5 @@ urlpatterns = [
     path('', ProductList.as_view(), name='product_list'),
     path('<slug:slug>/', ProductDetails.as_view(), name='product_detail'),
     path('brands/<slug:slug>/', BrandDetails.as_view(), name='brand_detail'),
+    path('debug/', queryset_debug, name='queryset_debug'),  # Debugging tool for testing queryset performance.
 ]
