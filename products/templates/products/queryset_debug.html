@@ -8,5 +8,14 @@
 <body>
     <h2>Debug Page</h2>
      
+    <ul>
+        
+        {% for product in data %}
+
+            <li>{{ product.name }}</li>
+            
+        {% endfor %}
+            
+    </ul>
 </body>
 </html>
