@@ -63,8 +63,11 @@
                         <div class="col all vegetables">
                             <div class="brand-wrap">
                                 <div class="brand-media">
-                                    <img src="{{brand.image.url}}" style="width: 150px; height: 150px;" alt="brand">
-                                    <div class="brand-overlay">
+                                    {% if brand.image %}
+                                        <img src="{{ brand.image.url }}" style="width: 150px; height: 150px;" alt="brand">
+                                    {% else %}
+                                        <img src="/media/sddefault.jpg" style="width: 150px; height: 150px;" alt="default brand">
+                                    {% endif %}                                    <div class="brand-overlay">
                                         <a href="{% url 'products:brand_detail' brand.slug %}"><i class="fas fa-link"></i></a>
                                     </div>
                                 </div>
