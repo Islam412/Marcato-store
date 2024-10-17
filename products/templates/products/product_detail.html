@@ -55,7 +55,7 @@
                             <h3 class="details-name"><a href="#">{{product}}</a></h3>
                             <div class="details-meta">
                                 <p>SKU:<span>{{product.sku}}</span></p>
-                                <p>BRAND:<a href="#">{{product.brand}}</a></p>
+                                <p>BRAND:<a href="{% url 'products:brand_detail' product.brand.slug %}">{{product.brand}}</a></p>
                             </div>
                             <div class="product-rating">
                                 <i class="icofont-star {% if product.avg_rate > 0 %}active{% endif %}"></i>

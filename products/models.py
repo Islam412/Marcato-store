@@ -72,6 +72,14 @@ class Brand(models.Model):
     def __str__(self):
         return self.name
     
+    # instance methods = each object , self=object
+    def avg_rate(self):
+        avg = self.review_product.aggregate(rate_avg=Avg('rate'))
+        if not avg['rate_avg']:
+            return 0
+            return result
+        return avg['rate_avg']
+    
     def save(self, *args, **kwargs):
        self.slug = slugify(self.name)
        super(Brand, self).save(*args, **kwargs)
