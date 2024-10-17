@@ -228,7 +228,7 @@ SIMPLE_JWT = {
 JAZZMIN_SETTINGS = {
     'site_header': "Marcato store",
     'site_brand': "Connecting people together...",
-    'site_logo': "assets/images/logo.png",
+    'site_logo': "assets/images/Marcato store.png",
     'copyright':  "All Right Reserved 2024",
     "welcome_sign": "Welcome to Marcato store Admin, Login Now.",
     "topmenu_links": [

@@ -5,7 +5,7 @@ from django.db import models
 class Company(models.Model):
     name = models.CharField(max_length=255)
     logo = models.ImageField(upload_to='company_logos')
-    subtitle = models.CharField(max_length=500)
+    subtitle = models.TextField(max_length=1000, null=True, blank=True)
     facebook_link = models.URLField(max_length=200, null=True, blank=True)
     instgram_link = models.URLField(max_length=200, null=True, blank=True)
     twitter_link = models.URLField(max_length=200, null=True, blank=True)
