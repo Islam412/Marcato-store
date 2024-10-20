@@ -109,9 +109,11 @@
                         <a href="index.html"><img src="{{ company_data.logo.url }}" alt="logo"></a>
                         <button class="header-src"><i class="fas fa-search"></i></button>
                     </div>
-
-
-                    
+        
+                    <a href="/" class="header-logo">
+                        <img src="{{ company_data.logo.url }}" alt="logo">
+                    </a>
+        
                     <div class="dropdown">
                         <button class="header-widget" title="My Account">
                             <img src="{{ user.profile.cover_images.url }}" alt="user">
@@ -122,14 +124,12 @@
                             <li><a href="{% url 'userauths:sign-out' %}">Log out</a></li>
                         </ul>
                     </div>
-
-
-
-                    <form class="header-form">
-                        <input type="text" placeholder="Search anything...">
-                        <button><i class="fas fa-search"></i></button>
+        
+                    <form class="header-form" method="get" action="{% url 'products:product_list' %}">
+                        <input type="text" name="q" placeholder="Search anything...">
+                        <button type="submit"><i class="fas fa-search"></i></button>
                     </form>
-
+        
                     <div class="header-widget-group">
                         <a href="wishlist.html" class="header-widget" title="Wishlist">
                             <i class="fas fa-heart"></i>
@@ -144,6 +144,7 @@
                 </div>
             </div>
         </header>
+        
         <!--=====================================
                     HEADER PART END
         =======================================-->
