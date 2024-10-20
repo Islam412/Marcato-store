@@ -72,6 +72,7 @@ class Brand(models.Model):
     def __str__(self):
         return self.name
     
+    # Add the result to the stars
     # instance methods = each object , self=object
     def avg_rate(self):
         avg = self.review_product.aggregate(rate_avg=Avg('rate'))
