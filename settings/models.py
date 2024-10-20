@@ -9,7 +9,6 @@ class Company(models.Model):
     facebook_link = models.URLField(max_length=200, null=True, blank=True)
     instgram_link = models.URLField(max_length=200, null=True, blank=True)
     twitter_link = models.URLField(max_length=200, null=True, blank=True)
-    youtube_facebook_link = models.URLField(max_length=200, null=True, blank=True)
     email = models.EmailField(max_length=200, null=True, blank=True)
     address = models.CharField(max_length=255, null=True, blank=True)
     phones = models.CharField(max_length=255, null=True, blank=True)
