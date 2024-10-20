@@ -84,6 +84,7 @@ class LogoutView(LoginRequiredMixin, TemplateView):
         return redirect("userauths:sign-up")
 
 
+# @login_required
 class ProfileView(DetailView):
     model = Profile
     template_name = 'userauths/profile.html'
@@ -93,7 +94,7 @@ class ProfileView(DetailView):
         return get_object_or_404(Profile, user=self.request.user)
 
 
-
+# @login_required
 class ProfileUpdateView(UpdateView):
     model = Profile
     form_class = ProfileForm
