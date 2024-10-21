@@ -7,6 +7,46 @@
 
 {% block boody %}
 
+<head>
+    <style>
+        .testimonial-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #fff;
+            margin: 10px 0;
+        }
+
+        .star-rating {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .star-rating li {
+            font-size: 25px;
+            color: #FFD700;
+            margin-right: 5px; 
+        }
+
+        .star-rating .rate-blank {
+            color: #ccc;
+        }
+
+        .testimonial-card img {
+            margin-top: 10px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
         <!--=====================================
                     BANNER PART START
         =======================================-->
@@ -1814,7 +1854,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-btn-50">
-                            <a href="brand-list.html" class="btn btn-outline">
+                            <a href="{% url 'products:brand_list' %}" class="btn btn-outline">
                                 <i class="fas fa-eye"></i>
                                 <span>view all brands</span>
                             </a>
@@ -1843,58 +1883,26 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="testimonial-slider slider-arrow">
-                            <div class="testimonial-card">
-                                <i class="fas fa-quote-left"></i>
-                                <p>Lorem ipsum dolor consectetur adipisicing elit neque earum sapiente vitae obcaecati magnam doloribus magni provident ipsam</p>
-                                <h5>mahmud hasan</h5>
-                                <ul>
-                                    <li class="fas fa-star"></li>
-                                    <li class="fas fa-star"></li>
-                                    <li class="fas fa-star"></li>
-                                    <li class="fas fa-star"></li>
-                                    <li class="fas fa-star"></li>
-                                </ul>
-                                <img src="{% static 'images/avatar/01.jpg' %}" alt="testimonial">
-                            </div>
-                            <div class="testimonial-card">
-                                <i class="fas fa-quote-left"></i>
-                                <p>Lorem ipsum dolor consectetur adipisicing elit neque earum sapiente vitae obcaecati magnam doloribus magni provident ipsam</p>
-                                <h5>mahmud hasan</h5>
-                                <ul>
-                                    <li class="fas fa-star"></li>
-                                    <li class="fas fa-star"></li>
-                                    <li class="fas fa-star"></li>
-                                    <li class="fas fa-star"></li>
-                                    <li class="fas fa-star"></li>
-                                </ul>
-                                <img src="{% static 'images/avatar/02.jpg' %}" alt="testimonial">
-                            </div>
-                            <div class="testimonial-card">
-                                <i class="fas fa-quote-left"></i>
-                                <p>Lorem ipsum dolor consectetur adipisicing elit neque earum sapiente vitae obcaecati magnam doloribus magni provident ipsam</p>
-                                <h5>mahmud hasan</h5>
-                                <ul>
-                                    <li class="fas fa-star"></li>
-                                    <li class="fas fa-star"></li>
-                                    <li class="fas fa-star"></li>
-                                    <li class="fas fa-star"></li>
-                                    <li class="fas fa-star"></li>
-                                </ul>
-                                <img src="{% static 'images/avatar/03.jpg' %}" alt="testimonial">
-                            </div>
-                            <div class="testimonial-card">
-                                <i class="fas fa-quote-left"></i>
-                                <p>Lorem ipsum dolor consectetur adipisicing elit neque earum sapiente vitae obcaecati magnam doloribus magni provident ipsam</p>
-                                <h5>mahmud hasan</h5>
-                                <ul>
-                                    <li class="fas fa-star"></li>
-                                    <li class="fas fa-star"></li>
-                                    <li class="fas fa-star"></li>
-                                    <li class="fas fa-star"></li>
-                                    <li class="fas fa-star"></li>
-                                </ul>
-                                <img src="{% static 'images/avatar/04.jpg' %}" alt="testimonial">
-                            </div>
+                            
+                            {% for review in review %}                                
+                                <div class="testimonial-card" style="background-color: darkolivegreen;">
+                                    <i class="fas fa-quote-left"></i>
+                                    <p>{{review.review}}</p>
+                                    <h5>{{review.user}}</h5>
+                                    
+                                    <ul class="star-rating">
+                                        <li class="icofont-ui-{% if review.rate > 4 %}rating{% else %}rate-blank{% endif %}"></li>
+                                        <li class="icofont-ui-{% if review.rate > 3 %}rating{% else %}rate-blank{% endif %}"></li>
+                                        <li class="icofont-ui-{% if review.rate > 2 %}rating{% else %}rate-blank{% endif %}"></li>
+                                        <li class="icofont-ui-{% if review.rate > 1 %}rating{% else %}rate-blank{% endif %}"></li>
+                                        <li class="icofont-ui-{% if review.rate > 0 %}rating{% else %}rate-blank{% endif %}"></li>
+                                    </ul>
+                                    
+                                    <img src="{{ review.user.profile.cover_images.url }}" style="width: 65px; height: 64.52px;" alt="review">
+                                </div>
+                            {% endfor %}
+                                
+
                         </div>
                     </div>
                 </div>
@@ -1902,156 +1910,5 @@
         </section>
         <!--=====================================
                    TESTIMONIAL PART END
-        =======================================-->
-
-
-        <!--=====================================
-                      BLOG PART START
-        =======================================-->
-        <section class="section blog-part">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="section-heading">
-                            <h2>Read our articles</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="blog-slider slider-arrow">
-                            <div class="blog-card">
-                                <div class="blog-media">
-                                    <a class="blog-img" href="#">
-                                        <img src="{% static 'images/blog/01.jpg' %}" alt="blog">
-                                    </a>
-                                </div>
-                                <div class="blog-content">
-                                    <ul class="blog-meta">
-                                        <li>
-                                            <i class="fas fa-user"></i>
-                                            <span>admin</span>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-calendar-alt"></i>
-                                            <span>february 02, 2021</span>
-                                        </li>
-                                    </ul>
-                                    <h4 class="blog-title">
-                                        <a href="blog-details.html">Voluptate blanditiis provident Lorem ipsum dolor sit amet</a>
-                                    </h4>
-                                    <p class="blog-desc">
-                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias autem recusandae deleniti nam dignissimos sequi ...
-                                    </p>
-                                    <a class="blog-btn" href="#">
-                                        <span>read more</span>
-                                        <i class="icofont-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="blog-card">
-                                <div class="blog-media">
-                                    <a class="blog-img" href="#">
-                                        <img src="{% static 'images/blog/02.jpg' %}" alt="blog">
-                                    </a>
-                                </div>
-                                <div class="blog-content">
-                                    <ul class="blog-meta">
-                                        <li>
-                                            <i class="fas fa-user"></i>
-                                            <span>admin</span>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-calendar-alt"></i>
-                                            <span>february 02, 2021</span>
-                                        </li>
-                                    </ul>
-                                    <h4 class="blog-title">
-                                        <a href="blog-details.html">Voluptate blanditiis provident Lorem ipsum dolor sit amet</a>
-                                    </h4>
-                                    <p class="blog-desc">
-                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias autem recusandae deleniti nam dignissimos sequi ...
-                                    </p>
-                                    <a class="blog-btn" href="#">
-                                        <span>read more</span>
-                                        <i class="icofont-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="blog-card">
-                                <div class="blog-media">
-                                    <a class="blog-img" href="#">
-                                        <img src="{% static 'images/blog/03.jpg' %}" alt="blog">
-                                    </a>
-                                </div>
-                                <div class="blog-content">
-                                    <ul class="blog-meta">
-                                        <li>
-                                            <i class="fas fa-user"></i>
-                                            <span>admin</span>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-calendar-alt"></i>
-                                            <span>february 02, 2021</span>
-                                        </li>
-                                    </ul>
-                                    <h4 class="blog-title">
-                                        <a href="blog-details.html">Voluptate blanditiis provident Lorem ipsum dolor sit amet</a>
-                                    </h4>
-                                    <p class="blog-desc">
-                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias autem recusandae deleniti nam dignissimos sequi ...
-                                    </p>
-                                    <a class="blog-btn" href="#">
-                                        <span>read more</span>
-                                        <i class="icofont-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="blog-card">
-                                <div class="blog-media">
-                                    <a class="blog-img" href="#">
-                                        <img src="{% static 'images/blog/04.jpg' %}" alt="blog">
-                                    </a>
-                                </div>
-                                <div class="blog-content">
-                                    <ul class="blog-meta">
-                                        <li>
-                                            <i class="fas fa-user"></i>
-                                            <span>admin</span>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-calendar-alt"></i>
-                                            <span>february 02, 2021</span>
-                                        </li>
-                                    </ul>
-                                    <h4 class="blog-title">
-                                        <a href="blog-details.html">Voluptate blanditiis provident Lorem ipsum dolor sit amet</a>
-                                    </h4>
-                                    <p class="blog-desc">
-                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias autem recusandae deleniti nam dignissimos sequi ...
-                                    </p>
-                                    <a class="blog-btn" href="#">
-                                        <span>read more</span>
-                                        <i class="icofont-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="section-btn-25">
-                            <a href="blog-grid.html" class="btn btn-outline">
-                                <i class="fas fa-eye"></i>
-                                <span>view all blog</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--=====================================
-                      BLOG PART END
         =======================================-->
 {% endblock boody %}
